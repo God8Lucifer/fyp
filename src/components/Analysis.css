@@ -5,7 +5,9 @@
 }
 
 .sidebar-menu {
+  position: fixed;
   width: 14vw;
+  height: 95%;
   background-color: #ffffff;
   border: 1.5px solid #ddd;
   border-radius: 8px;
@@ -72,13 +74,14 @@
 
 
 .main-content{
-  width: 100%;
+  margin-left: 14vw;
+  width: calc(100% - 14vw);
   /* height: 95vh; */
   background-color: #fafafa;
 }
 
 .content-header{
-  margin: 2.5rem 0 0 3rem;
+  margin: 2.5rem 0 0 4rem;
 }
 
 .content-header h1{
