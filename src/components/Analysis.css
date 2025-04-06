@@ -142,7 +142,25 @@ input::placeholder {
   font-weight: bold;
   cursor: pointer;
   font-size: 16px;
+  animation: pulse 2s infinite ease-in-out;
+  transition: transform 0.2s ease;
 }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(249, 195, 107, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px rgba(255, 201, 113, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 201, 113, 0);
+  }
+}
+
 
 .analysis-results {
   max-width: 1000px;
@@ -216,6 +234,11 @@ input::placeholder {
   height: 34px;
   border-radius: 8px;
   font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.save-btn:hover{
+  background-color: #dfdfdf;
 }
 
 .export-btn{
@@ -225,6 +248,11 @@ input::placeholder {
   height: 34px;
   border-radius: 8px;
   font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.export-btn:hover{
+  background-color: #dfdfdf;
 }
 
 .grid-container {
@@ -304,3 +332,6 @@ input::placeholder {
   color: #9F9F9F;
   text-align: center;
 }
+
+
+
