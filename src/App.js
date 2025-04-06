@@ -1,8 +1,8 @@
 import React from 'react';
-import Dashboard from './components/Dashboard';
+import Analysis from './components/Analysis';
 
 function App() {
-  return <Dashboard />;
+  return <Analysis />;
 }
 
 export default App;
