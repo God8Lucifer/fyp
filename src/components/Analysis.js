@@ -36,7 +36,7 @@ const Analysis = () => {
           </nav>
         </div>
         <div className="sidebar-footer">
-          <img src="profile.jpg" className="user-img" alt="User profile" />
+          <img src="/profile.jpg" className="user-img" alt="User profile" />
           <p>Username</p>
         </div>
       </div>
