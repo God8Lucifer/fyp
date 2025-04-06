@@ -39,6 +39,10 @@ body {
   font-weight: 600;
 }
 
+.sidebar-nav {
+  margin-top: -30vh;
+}
+
 .sidebar-nav nav a {
   display: flex;
   align-items: center;
@@ -53,6 +57,12 @@ body {
 
 .sidebar-nav nav a:hover {
   background-color: #f0ecfc;
+}
+
+.sidebar-nav nav a .icon {
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
 }
 
 .sidebar-footer {
@@ -72,18 +82,20 @@ body {
   margin-left: 14vw;
   padding: 40px;
   width: calc(100% - 14vw);
+  background-color: #fafafa;
 }
 
 .content-header h1 {
   color: #211C83;
-  font-size: 26px;
-  margin-bottom: 0.3rem;
+  font-size: 32px;
+  margin-bottom: 0.6rem;
 }
 
 .content-header p {
   color: #979797;
-  margin-bottom: 40px;
   font-size: 14px;
+  margin-top: 0.2rem;
+  margin-bottom: 40px;
 }
 
 .search-section {
@@ -125,6 +137,7 @@ body {
   appearance: none;
   font-size: 14px;
   background-color: white;
+  text-align: center; /* <-- centers the dropdown text */
 }
 
 .select-container i {
@@ -136,31 +149,46 @@ body {
   color: #4c3faf;
 }
 
+/* ---------- UPDATED SEARCH BUTTON STYLE ---------- */
+
 .expand-btn {
   display: flex;
   align-items: center;
-  gap: 10px;
   background-color: #6b52ee;
   color: white;
   border: none;
-  padding: 12px 18px;
   border-radius: 8px;
   font-size: 14px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  overflow: hidden;
+  padding: 12px;
+  width: 50px;
+  transition: width 0.3s ease;
+}
+.search-expand {
+  background-color: #636AE8; /* <-- updated color */
+}
+.search-expand:hover {
+  width: 130px;
+  background-color: #4f59d8; /* Slightly darker on hover */
+}
+.expand-btn i {
+  flex-shrink: 0;
 }
 
 .expand-btn .btn-text {
   opacity: 0;
-  width: 0;
+  margin-left: 8px;
   white-space: nowrap;
-  transition: opacity 0.3s ease, width 0.3s ease;
+  overflow: hidden;
+  transition: opacity 0.3s ease;
 }
 
-.expand-btn:hover .btn-text {
+.search-expand:hover .btn-text {
   opacity: 1;
-  width: auto;
 }
+
+/* ---------- END SEARCH BUTTON STYLE ---------- */
 
 .result-tree {
   margin-top: 40px;
@@ -183,8 +211,13 @@ body {
   background-color: #fff;
   font-size: 13px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
-
+.tree-header button:hover {
+  background-color: #636AE8;
+  color: white;
+  border-color: #636AE8;
+}
 .tree-body {
   display: flex;
   flex-direction: column;
@@ -231,6 +264,10 @@ body {
   width: 180px;
   height: 2px;
   background-color: #aaa;
+}
+
+.horizontal-line.short {
+  width: 140px;
 }
 
 .children {

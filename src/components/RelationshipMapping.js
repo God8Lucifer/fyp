@@ -57,7 +57,7 @@ const RelationshipMapping = () => {
               </select>
               <i className="fa fa-chevron-down"></i>
             </div>
-            <button className="expand-btn" onClick={handleSearch}>
+            <button className="expand-btn search-expand" onClick={handleSearch}>
               <i className="fas fa-search"></i>
               <span className="btn-text">Search</span>
             </button>
@@ -109,12 +109,11 @@ const RelationshipMapping = () => {
                 </div>
               </div>
 
-              {degree === "2nd Degree" || degree === "3rd Degree" ? (
+              {(degree === "2nd Degree" || degree === "3rd Degree") && (
                 <>
                   <div className="vertical-line"></div>
                   <div className="horizontal-line-wrapper"><div className="horizontal-line"></div></div>
 
-                  {/* 2nd Degree */}
                   <div className="children">
                     <div className="node">
                       <img src="/profile.jpg" alt="Profile" />
@@ -136,14 +135,13 @@ const RelationshipMapping = () => {
                     </div>
                   </div>
                 </>
-              ) : null}
+              )}
 
               {degree === "3rd Degree" && (
                 <>
                   <div className="vertical-line"></div>
                   <div className="horizontal-line-wrapper"><div className="horizontal-line short"></div></div>
 
-                  {/* 3rd Degree */}
                   <div className="children">
                     <div className="node">
                       <img src="/profile.jpg" alt="Profile" />
