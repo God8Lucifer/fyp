@@ -61,8 +61,16 @@ const Analysis = () => {
             <p>Predict relationship and evidence</p>
           </div>
           <div className="result-box2">
-            <h3>Analysis Result</h3>
-            <p>AI-generated insights about the relationship between the two citizens</p>
+            <div className="content">
+              <div className="box2-content">
+                <h3>Analysis Result</h3>
+                <p>AI-generated insights about the relationship between the two citizens</p>
+              </div>
+              <div className="box2-content2">
+                <button className="save-btn">Save</button>
+                <button className="export-btn">Export</button>
+              </div>
+            </div>
             <div className="grid-container">
               <div className="item wide First">
                 <h4>Relationship Type :</h4>
