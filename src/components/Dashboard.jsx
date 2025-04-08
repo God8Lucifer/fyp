@@ -96,7 +96,7 @@ function Dashboard() {
           </nav>
         </div>
         <div className="user-box">
-          <img src="/avatar.png" alt="User" />
+          <img src="/profile.jpg" alt="User" />
           <span>Username</span>
         </div>
       </aside>
