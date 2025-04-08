@@ -42,45 +42,57 @@ const RelationshipMapping = () => {
         <div className="content-header">
           <h1>Relationship Mapping</h1>
           <p>Quick familia tree generator</p>
-        </div>
 
-        <div className="search-section">
-          <h2>Search Citizen</h2>
-          <div className="search-controls">
-            <input type="text" placeholder="Enter citizen ID to view family ties" />
-            <div className="select-container">
-              <select value={degree} onChange={handleDegreeChange}>
-                <option>Select Degree</option>
-                <option>1st Degree</option>
-                <option>2nd Degree</option>
-                <option>3rd Degree</option>
-              </select>
-              <i className="fa fa-chevron-down"></i>
+          {!showTree ? (
+            <div className="search-section">
+              <h2>Search Citizen</h2>
+              <div className="search-controls">
+                <input type="text" placeholder="Enter citizen ID to view family ties" />
+                <div className="select-container">
+                  <select value={degree} onChange={handleDegreeChange}>
+                    <option>Select Degree</option>
+                    <option>1st Degree</option>
+                    <option>2nd Degree</option>
+                    <option>3rd Degree</option>
+                  </select>
+                  <i className="fa fa-chevron-down"></i>
+                </div>
+                <button className="expand-btn search-expand" onClick={handleSearch}>
+                  <i className="fas fa-search"></i>
+                  <span className="btn-text">Search</span>
+                </button>
+              </div>
             </div>
-            <button className="expand-btn search-expand" onClick={handleSearch}>
-              <i className="fas fa-search"></i>
-              <span className="btn-text">Search</span>
-            </button>
-          </div>
+          ) : (
+            <div className="search-action-bar">
+              <div className="search-left">
+                <input type="text" placeholder="Enter citizen ID to view family ties" />
+                <button className="expand-btn search-expand">
+                  <i className="fas fa-search"></i>
+                  <span className="btn-text">Search</span>
+                </button>
+              </div>
+
+              <div className="search-right">
+                <button><i className="fas fa-share"></i> Share</button>
+                <button><i className="fas fa-save"></i> Save</button>
+                <button><i className="fas fa-download"></i> Export</button>
+                <div className="select-container">
+                  <select value={degree} onChange={handleDegreeChange}>
+                    <option>Select Degree</option>
+                    <option>1st Degree</option>
+                    <option>2nd Degree</option>
+                    <option>3rd Degree</option>
+                  </select>
+                  <i className="fa fa-chevron-down"></i>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
 
         {showTree && (
           <div className="result-tree">
-            <div className="tree-header">
-              <button><i className="fas fa-share"></i> Share</button>
-              <button><i className="fas fa-save"></i> Save</button>
-              <button><i className="fas fa-download"></i> Export</button>
-              <div className="select-container">
-                <select value={degree} onChange={handleDegreeChange}>
-                  <option>Select Degree</option>
-                  <option>1st Degree</option>
-                  <option>2nd Degree</option>
-                  <option>3rd Degree</option>
-                </select>
-                <i className="fa fa-chevron-down"></i>
-              </div>
-            </div>
-
             <div className="tree-body">
               {/* Root Node */}
               <div className="node parent">
